@@ -4,12 +4,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    #Once the @users variable is defined, the controller calls the view (Step 6), shown in Listing 2.10. Variables that start with the @ sign, called instance variables, are automatically available in the views; in this case, the index.html.erb view in Listing 2.10 iterates through the @users list and outputs a line of HTML for each one
     @users = User.all
+    
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+
   end
 
   # GET /users/new
@@ -54,6 +57,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    p "-"*30
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
